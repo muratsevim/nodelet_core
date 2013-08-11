@@ -35,6 +35,7 @@
 #include <nodelet/nodelet.h>
 #include <dynamic_reconfigure/server.h>
 #include <nodelet_topic_tools/NodeletThrottleConfig.h>
+#include <boost/thread/lock_guard.hpp>
 
 namespace nodelet_topic_tools
 {
