@@ -9,7 +9,8 @@ catkin_package(
 )
 
 if(CATKIN_ENABLE_TESTING)
-  include_directories(SYSTEM ${catkin_INCLUDE_DIRS})
+  find_package(Boost REQUIRED COMPONENTS thread)
+  include_directories(SYSTEM ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
   add_library(test_nodelet_topic_tools test/string_nodelet_throttle.cpp)
   target_link_libraries(test_nodelet_topic_tools ${catkin_LIBRARIES})
   add_dependencies(test_nodelet_topic_tools ${nodelet_topic_tools_EXPORTED_TARGETS})
